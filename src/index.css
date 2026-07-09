@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    background-color: #020617;
+    color: #f8fafc;
+    transition: background-color 200ms ease, color 200ms ease;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+  }
+
+  /* Remove number input arrows */
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+  }
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+}
+
+@layer utilities {
+  .animate-in {
+    animation-duration: 300ms;
+    animation-fill-mode: both;
+  }
+  .fade-in {
+    animation-name: fadeIn;
+  }
+  .slide-in-from-bottom-4 {
+    animation-name: slideInFromBottom;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  @keyframes slideInFromBottom {
+    from { opacity: 0; transform: translateY(1rem); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   LIGHT MODE OVERRIDES
+   When the .dark class is NOT present on the html element
+   ───────────────────────────────────────────────────────────────────────────── */
+html:not(.dark) body {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+html:not(.dark) .bg-slate-950 {
+  background-color: #f8fafc !important;
+}
+
+html:not(.dark) .bg-slate-950\/30 {
+  background-color: rgba(241, 245, 249, 0.3) !important;
+}
+
+html:not(.dark) .bg-slate-950\/40 {
+  background-color: rgba(241, 245, 249, 0.4) !important;
+}
+
+html:not(.dark) .bg-slate-950\/50 {
+  background-color: rgba(241, 245, 249, 0.5) !important;
+}
+
+html:not(.dark) .bg-slate-950\/60 {
+  background-color: rgba(241, 245, 249, 0.65) !important;
+  border-color: #cbd5e1 !important;
+}
+
+html:not(.dark) .bg-slate-950\/70 {
+  background-color: rgba(241, 245, 249, 0.75) !important;
+  border-color: #cbd5e1 !important;
+}
+
+html:not(.dark) .bg-slate-950\/80 {
+  background-color: rgba(241, 245, 249, 0.85) !important;
+  border-color: #cbd5e1 !important;
+}
+
+html:not(.dark) .bg-slate-950\/90 {
+  background-color: rgba(248, 250, 252, 0.95) !important;
+}
+
+html:not(.dark) .bg-slate-900 {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+html:not(.dark) .bg-slate-900\/40 {
+  background-color: rgba(255, 255, 255, 0.4) !important;
+  border-color: #cbd5e1 !important;
+}
+
+html:not(.dark) .bg-slate-900\/60 {
+  background-color: rgba(241, 245, 249, 0.65) !important;
+  border-color: #cbd5e1 !important;
+}
+
+html:not(.dark) .bg-slate-900\/80 {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  border-color: #cbd5e1 !important;
+}
+
+html:not(.dark) .bg-slate-900\/90 {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+  border-color: #cbd5e1 !important;
+}
+
+html:not(.dark) .bg-slate-800 {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+html:not(.dark) .bg-slate-800\/40 {
+  background-color: rgba(241, 245, 249, 0.4) !important;
+  border-color: #cbd5e1 !important;
+}
+
+html:not(.dark) .bg-slate-800\/50 {
+  background-color: rgba(241, 245, 249, 0.5) !important;
+  border-color: #cbd5e1 !important;
+}
+
+html:not(.dark) .bg-slate-800\/60 {
+  background-color: rgba(241, 245, 249, 0.6) !important;
+  border-color: #cbd5e1 !important;
+}
+
+html:not(.dark) .bg-slate-800\/80 {
+  background-color: rgba(241, 245, 249, 0.8) !important;
+  border-color: #cbd5e1 !important;
+}
+
+html:not(.dark) .bg-slate-800\/90 {
+  background-color: rgba(241, 245, 249, 0.9) !important;
+  border-color: #cbd5e1 !important;
+}
+
+html:not(.dark) .bg-indigo-500\/5 {
+  background-color: rgba(99, 102, 241, 0.08) !important;
+}
+
+html:not(.dark) .bg-indigo-500\/10 {
+  background-color: rgba(99, 102, 241, 0.12) !important;
+}
+
+html:not(.dark) .bg-emerald-500\/10 {
+  background-color: rgba(16, 185, 129, 0.12) !important;
+}
+
+/* Ensure solid buttons retain white text in light mode */
+html:not(.dark) .bg-indigo-600.text-white,
+html:not(.dark) .bg-indigo-600 .text-white,
+html:not(.dark) .bg-rose-600.text-white,
+html:not(.dark) .bg-rose-500.text-white,
+html:not(.dark) .bg-emerald-600.text-white,
+html:not(.dark) .bg-emerald-500.text-white {
+  color: #ffffff !important;
+}
+
+html:not(.dark) .text-white {
+  color: #0f172a !important;
+}
+
+html:not(.dark) .text-slate-100 {
+  color: #0f172a !important;
+}
+
+html:not(.dark) .text-slate-200 {
+  color: #0f172a !important;
+}
+
+html:not(.dark) .text-slate-300 {
+  color: #1e293b !important; /* High contrast text color */
+}
+
+html:not(.dark) .text-slate-400 {
+  color: #334155 !important; /* Slate 700 - high contrast subtext */
+}
+
+html:not(.dark) .text-slate-500 {
+  color: #475569 !important; /* Slate 600 - high contrast labels */
+}
+
+html:not(.dark) .border-white\/5 {
+  border-color: rgba(15, 23, 42, 0.06) !important;
+}
+
+html:not(.dark) .border-white\/10 {
+  border-color: rgba(15, 23, 42, 0.1) !important;
+}
+
+html:not(.dark) .border-white\/15 {
+  border-color: rgba(15, 23, 42, 0.15) !important;
+}
+
+html:not(.dark) .border-slate-800 {
+  border-color: #cbd5e1 !important;
+}
+
+html:not(.dark) .border-slate-700 {
+  border-color: #cbd5e1 !important;
+}
+
+html:not(.dark) .border-slate-600 {
+  border-color: #cbd5e1 !important;
+}
+
+html:not(.dark) ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+
+html:not(.dark) ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+html:not(.dark) select {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23475569' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e") !important;
+  background-position: right 0.75rem center !important;
+  background-repeat: no-repeat !important;
+  background-size: 1em !important;
+  padding-right: 2.5rem !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
+
+/* Fix contrast for accent colors in light mode */
+html:not(.dark) .text-amber-400,
+html:not(.dark) .text-amber-500 {
+  color: #b45309 !important; /* amber-700 */
+}
+html:not(.dark) .border-amber-500 {
+  border-color: #b45309 !important;
+}
+html:not(.dark) .bg-amber-500 {
+  background-color: #d97706 !important; /* amber-600 */
+}
+
+html:not(.dark) .text-emerald-400,
+html:not(.dark) .text-emerald-500 {
+  color: #047857 !important; /* emerald-700 */
+}
+html:not(.dark) .border-emerald-500 {
+  border-color: #047857 !important;
+}
+html:not(.dark) .bg-emerald-500 {
+  background-color: #059669 !important; /* emerald-600 */
+}
+
+html:not(.dark) .text-indigo-400,
+html:not(.dark) .text-indigo-500 {
+  color: #4f46e5 !important; /* indigo-600 */
+}
+html:not(.dark) .text-blue-400,
+html:not(.dark) .text-blue-500 {
+  color: #2563eb !important; /* blue-600 */
+}
+
+/* Ensure glass panels have proper shadow and definition in light mode */
+html:not(.dark) .shadow-2xl {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15) !important;
+}
+html:not(.dark) .shadow-black\/80 {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1) !important;
+}
